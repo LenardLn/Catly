@@ -16,7 +16,7 @@ const page = window.location.pathname;
 let linkGeneral = document.createElement("link");
 linkGeneral.rel = "stylesheet";
 
-if (page === "/html/home.html") {
+if (page === "/html/index.html") {
   document.title = "Home | Catly";
   linkGeneral.href = "/css/home.css";
   document.head.appendChild(linkGeneral);
