@@ -1,0 +1,36 @@
+<div class="navbar collapsible">
+  <a style="width: fit-content" href="/html/index.html"
+    ><img id="catly-logo" src="/images/catly-logo.webp" alt=""
+  /></a>
+  <svg class="nav__toggler">
+    <use xlink:href="../images/spriteICO.svg#menu"></use>
+  </svg>
+  <ul id="navbar" class="nav__list">
+    <li id="first" class="nav__item">
+      <a href="/html/index.html" class="nav__link">HOME</a>
+    </li>
+    <li class="nav__item">
+      <a href="/html/cats.html" class="nav__link">CATS</a>
+    </li>
+    <li class="nav__item">
+      <a href="/html/food.html" class="nav__link">FOOD</a>
+    </li>
+    <li class="nav__item">
+      <a href="/html/contact.html" class="nav__link">CONTACT</a>
+    </li>
+    <li id="last">
+      <svg>
+        <use xlink:href="../images/spriteICO.svg#cat-toy"></use>
+      </svg>
+      <input type="text" id="searchbar-nav" />
+    </li>
+  </ul>
+</div>
+
+<body id="removable"></body>
+<script id="removable-script" type="text/javascript">
+  const element = document.getElementById("removable");
+  element.style.display = "none";
+  const script = document.getElementById("removable-script");
+  script.parentNode.removeChild(script);
+</script>

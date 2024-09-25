@@ -1,0 +1,19 @@
+{
+  "name": "sass",
+  "version": "1.0.0",
+  "description": "sass",
+  "main": "index.js",
+  "scripts": {
+    "navbar-sass": "node-sass  sass/navbar.scss css/navbar.css -w" ,
+    "home-sass": "node-sass sass/home.scss css/home.css -w",
+    "cats-sass": "node-sass sass/cats.scss css/cats.css -w",
+    "food-sass": "node-sass sass/food.scss css/food.css -w",
+    "contact-sass": "node-sass sass/contact.scss css/contact.css -w",
+    "all-sass":"node-sass sass/ -o css/ --recursive --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^8.0.0"
+  }
+}

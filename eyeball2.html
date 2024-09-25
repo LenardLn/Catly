@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font: inherit;
+      }
+      *::before,
+      *,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        color-scheme: dark light;
+      }
+
+      img,
+      picture,
+      svg,
+      video {
+        display: block;
+        max-width: 100%;
+      }
+
+      .catWithEyes {
+        display: grid;
+        place-items: center;
+        grid-template-areas: "one";
+      }
+
+      .catWithEyes > * {
+        grid-area: one;
+      }
+
+      .eyes {
+        grid-template-areas: "one";
+        display: flex;
+        justify-content: center;
+      }
+      .eye {
+        width: 3.75rem;
+        height: 3.75rem;
+        background: gold;
+        margin: 1.5rem;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+
+      .ball {
+        height: 2.5rem;
+        width: 2.5rem;
+        background: #000;
+        border-radius: 50%;
+        position: relative;
+      }
+
+      .shines {
+        width: 1.3rem;
+        height: 1.3rem;
+        background: white;
+        transform: translate(90%, 70%);
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <header></header>
+    <br />
+    <p style="font-family: TC October">Hello there I'm Obi-Wan Kenobi</p>
+    <div style="height: 400px"></div>
+    <form action="" class="catWithEyes">
+      <img src="/images/catface.svg" alt="" class="catImage" />
+      <div class="eyes">
+        <div class="eye">
+          <div class="ball">
+            <div class="shines"></div>
+          </div>
+        </div>
+        <div class="eye">
+          <div class="ball"><div class="shines"></div></div>
+        </div>
+      </div>
+    </form>
+    <script>
+      const eyes = document.getElementsByClassName("ball");
+
+      document.addEventListener("mousemove", (event) => {
+        updateEyesPosition(event);
+      });
+
+      document.addEventListener("touchmove", (event) => {
+        updateEyesPosition(event);
+      });
+
+      function updateEyesPosition(event) {
+        let x, y;
+        if (event.type === "mousemove") {
+          x = (event.clientX * 100) / window.innerWidth + "%";
+          y = (event.clientY * 100) / window.innerHeight + "%";
+        } else if (event.type === "touchmove") {
+          x = (event.touches[0].clientX * 100) / window.innerWidth + "%";
+          y = (event.touches[0].clientY * 100) / window.innerHeight + "%";
+        }
+        //event.touches[0].clientX => get the horizontal coordinate of the finger
+        //event.touches[0].clientY => get the vertical coordinate of the finger
+        //window.innerWidth => get the browser width
+        //window.innerHeight => get the browser height;
+        for (let i = 0; i < 2; i++) {
+          eyes[i].style.left = x;
+          eyes[i].style.top = y;
+          eyes[i].style.transform = "translate(-" + x + ",-" + y + ")";
+        }
+      }
+    </script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>
