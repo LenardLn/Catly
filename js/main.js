@@ -16,19 +16,19 @@ const page = window.location.pathname;
 let linkGeneral = document.createElement("link");
 linkGeneral.rel = "stylesheet";
 
-if (page === "/html/index.html") {
+if (page === "/") {
   document.title = "Home | Catly";
   linkGeneral.href = "/css/home.css";
   document.head.appendChild(linkGeneral);
-} else if (page === "/html/cats.html") {
+} else if (page === "/cats") {
   document.title = "Cats | Catly";
   linkGeneral.href = "/css/cats.css";
   document.head.appendChild(linkGeneral);
-} else if (page === "/html/food.html") {
+} else if (page === "/food") {
   document.title = "Food | Catly";
   linkGeneral.href = "/css/food.css";
   document.head.appendChild(linkGeneral);
-} else if (page === "/html/contact.html") {
+} else if (page === "/contact") {
   document.title = "Contact | Catly";
   linkGeneral.href = "/css/contact.css";
   document.head.appendChild(linkGeneral);
