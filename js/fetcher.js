@@ -1,6 +1,6 @@
 // the ./ is important, because that show that we WATCH that current file
 
-fetch("./navbar.html")
+fetch("/html/navbar.html")
   .then((response) => {
     return response.text();
   })
